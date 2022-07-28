@@ -9,7 +9,7 @@ const initialState = {
 export const coorSlice = createSlice({
   name: "coor",
   initialState,
-  reducer: {
+  reducers: {
     setOrigin: (state, action) => {
       state.origin = action.payload;
     },

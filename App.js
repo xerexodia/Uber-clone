@@ -2,24 +2,23 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import Home from "./screens/Home";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import Main from "./navigators/Main";
+import 'react-native-gesture-handler';
+import RideNav from "./navigators/RideNav";
+
 
 export default function App() {
   return (
     <Provider store={store}>
-      <SafeAreaView>
-        <View>
-          <Text>qsdfsdf</Text>
-        </View>
-      </SafeAreaView>
+      
+      <NavigationContainer>
+        <SafeAreaProvider>
+          <Main />
+        </SafeAreaProvider>
+      </NavigationContainer>
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
